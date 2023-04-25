@@ -53,7 +53,9 @@ public class StatsService {
 
 
     ///продажи ниже среднего
-    public int getUnderMedSales(int[] sales, int med) {
+    public int getUnderMedSales(int[] sales) {
+        StatsService service = new StatsService();
+        int med = service.getMedSum(sales);          //среднее значение
         int underMed = 0;                           //счётчик месяцев
         for (int i = 0; i < sales.length; i++) {   //пробегаемся по массиву
             if (sales[i] < med) {                 //если продажи ниже среднего, то увеличиваем счётчик на 1
@@ -66,7 +68,9 @@ public class StatsService {
 
 
     ///продажи выше среднего
-    public int getAboveMedSales(int[] sales, int med) {
+    public int getAboveMedSales(int[] sales) {
+        StatsService service = new StatsService();
+        int med = service.getMedSum(sales);          //среднее значение
         int aboveMed = 0;                           //счётчик месяцев
         for (int i = 0; i < sales.length; i++) {   //пробегаемся по массиву
             if (sales[i] > med) {                 //если продажи выше среднего, то увеличиваем счётчик на 1

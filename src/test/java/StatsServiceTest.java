@@ -48,9 +48,8 @@ public class StatsServiceTest {
     public void ShouldShowUnderMedSales(){
         int[] sales = {8, 5, 7, 23, 3, 9};
         StatsService service = new StatsService();
-        int medium = service.getMedSum(sales);
         int expectedUnderMedSum = 4;
-        int actualUnderMedSum = service.getUnderMedSales(sales, medium);
+        int actualUnderMedSum = service.getUnderMedSales(sales);
 
         Assertions.assertEquals(expectedUnderMedSum, actualUnderMedSum);
     }
@@ -59,9 +58,8 @@ public class StatsServiceTest {
     public void ShouldShowAboveMedSales(){
         int[] sales = {8, 5, 7, 23, 3, 9};
         StatsService service = new StatsService();
-        int medium = service.getMedSum(sales);
         int expectedAboveMedSum = 1;
-        int actualAboveMedSum = service.getAboveMedSales(sales, medium);
+        int actualAboveMedSum = service.getAboveMedSales(sales);
 
         Assertions.assertEquals(expectedAboveMedSum, actualAboveMedSum);
     }
